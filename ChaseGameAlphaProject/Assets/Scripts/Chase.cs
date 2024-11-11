@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class Chase : MonoBehaviour
 {
-    public GameObject player;
-    
+    public GameObject Sphere;
+    public GameObject Player;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,6 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(-9, 2, -2);
+        Sphere.transform.position = Vector3.MoveTowards(Sphere.transform.position, Player.transform.position, speed);
     }
 }
