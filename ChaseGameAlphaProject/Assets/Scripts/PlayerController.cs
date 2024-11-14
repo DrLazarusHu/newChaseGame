@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
    private float currentSpeed;
 
     public bool hasPowerup = false;
+    private bool canJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             rb.AddForce(Vector3.up * 270, ForceMode.Impulse);
+            canJump = false;
+            StartCoroutine(JumpCooldown());
         }
 
         transform.Translate(Vector3.forward * Time.deltaTime * -currentSpeed);
@@ -45,5 +48,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(5);
         hasPowerup = false;
         currentSpeed = baseSpeed;
+    }
+
+    IEnumerator JumpCooldown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canJump = true;
     }
 }

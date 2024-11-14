@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine;
+
+
 
 public class Chase : MonoBehaviour
 {
@@ -33,4 +36,8 @@ public class Chase : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+
+
+
 }
