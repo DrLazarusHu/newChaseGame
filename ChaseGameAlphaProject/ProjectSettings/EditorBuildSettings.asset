@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 456bac0da4c17054ebf21867746d44ba
   - enabled: 1
-    path: Assets/Scenes/Chase.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/SampleScene.unity
+    guid: ecb39541c15378e419cc24a2dad68da5
   m_configObjects: {}
