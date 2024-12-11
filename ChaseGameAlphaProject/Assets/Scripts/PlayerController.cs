@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && canJump)
         {
-            rb.AddForce(Vector3.up * 270, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * 400, ForceMode.Impulse);
             canJump = false;
             StartCoroutine(JumpCooldown());
         }
